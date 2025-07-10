@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - Gundar eSport</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white font-sans">
+
+  <!-- Header Navigation -->
+  <header class="p-4 text-white">
+    <nav class="flex gap-4">
+      <a href="../index.html" class="hover:underline">Home</a>
+      <a href="contact.html" class="hover:underline">Contacts</a>
+      <a href="../form-dropdown/ml.html">Daftar</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex justify-center items-center min-h-[80vh] px-4">
+    <div class="bg-white/5 backdrop-blur-md rounded-xl shadow-xl p-10 max-w-md w-full border border-white/10">
+      <h1 class="text-2xl md:text-3xl font-bold text-yellow-400 text-center mb-6">Hubungi Kami</h1>
+
+      <form onsubmit="sendWhatsApp(event)" class="space-y-4">
+        <div>
+          <label for="nama" class="block mb-1 text-sm">Nama Lengkap</label>
+          <input id="nama" name="nama" required
+            class="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        </div>
+        <div>
+          <label for="nomor" class="block mb-1 text-sm">Nomor WhatsApp</label>
+          <input id="nomor" name="nomor" required
+            class="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        </div>
+        <div>
+          <label for="pesan" class="block mb-1 text-sm">Pesan</label>
+          <textarea id="pesan" rows="4" required
+            class="w-full px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-300"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-2 rounded-lg transition-all duration-200">
+          Kirim Pesan
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function sendWhatsApp(e) {
+      e.preventDefault();
+
+      const destNumber = "6287887073300"; // ← GANTI dengan nomor Anda
+
+      const nama = document.getElementById("nama").value.trim();
+      const nomor = document.getElementById("nomor").value.trim();
+      const pesan = document.getElementById("pesan").value.trim();
+
+      const message =
+        `*GamersPro Service*%0A%0A` +
+        `Nama: ${nama}%0A` +
+        `Nomor: ${nomor}%0A` +
+        `Pesan: ${pesan}%0A%0A` +
+        `*Terima kasih telah menghubungi kami!*`;
+
+      const waLink = `https://wa.me/${destNumber}?text=${message}`;
+      window.open(waLink, '_blank');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrasi Turnamen Gundar eSport</title>
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    /* custom scroll bar for gamers vibe */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #6d28d9; border-radius: 8px; }
+  </style>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-gray-900 text-white flex items-center justify-center py-10">
+  <!-- background -->
+  <div class="bg-left"></div>
+  <div class="bg-right"></div>
+    <!-- form container -->
+  <div class="w-full max-w-3xl bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8 ring-1 ring-white/20">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-8 text-indigo-300 tracking-wide">Form Registrasi Turnamen</h1>
+    <form id="registerForm" onsubmit="sendWhatsApp(event)" class="space-y-8">
+        
+<!-- dropdown -->
+         <div class="dropdown-container">
+    <label for="game-select">Pilih Game:</label><br>
+    <select id="game-select">
+      <option value="ml">Mobile Legends</option>
+      <option value="ff">Free Fire</option>
+      <option value="pubg">PUBG</option>
+      <option value="hok">Honor of Kings</option>
+    </select>
+  </div>
+  <!-- dropdown exit -->
+
+      <!-- TEAM INFORMATION -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4 text-indigo-200">TEAM INFORMATION</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Team Name</label>
+            <input id="teamName" type="text" required placeholder="Team Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+         <div>
+  <label class="block mb-1 text-white">Pilih Event</label>
+  <select id="teamLogoDropdown" class="w-full bg-gray-900/60 rounded-md px-4 py-2 text-white">
+    <option value="">-- Pilih Event --</option>
+    <option value="https://photos.app.goo.gl/MtGfT7fAYnfhZqeLA">Mobile Legend</option>
+    <option value="https://drive.google.com/file/d/1aUBvapM_iauWfi4zEwToSLmpOJ8bhrgI/view?usp=sharing">FF</option>
+    <option value="https://drive.google.com/file/d/154g2qF3VWvJRHUpCZf1-XOGk9o2RnBNe/view?usp=sharing">PUBG</option>
+    <option value="https://drive.google.com/file/d/19QZLYfZf7uHBk4ls-lgvGnEdozVyXQ70/view?usp=sharing">HOK</option>
+  </select>
+</div>
+
+
+
+          <div>
+            <label class="block mb-1">Institution</label>
+            <input id="institution" type="text" placeholder="Institution" class="w-full bg-gray-900/60 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label class="block mb-1">Region</label>
+            <input id="region" type="text" placeholder="Region" class="w-full bg-gray-900/60 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+        </div>
+      </section>
+
+      <!-- PLAYER DETAILS -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4 text-indigo-200">PLAYER DETAILS</h2>
+        <!-- Player 0 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="block mb-1">Full Name</label>
+            <input id="fullName" type="text" placeholder="Full Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Nickname</label>
+            <input id="nickname" type="text" placeholder="Nickname" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Player ID</label>
+            <input id="playerId" type="text" placeholder="Player ID" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="playerRole" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="playerEmail" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+
+        <!-- Player 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 1 Name</label>
+            <input id="player1Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player1Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player1Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player1Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+        <!-- Player 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 2 Name</label>
+            <input id="player2Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player2Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player2Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player2Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+        <!-- Player 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 3 Name</label>
+            <input id="player3Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player3Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player3Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player3Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+        <!-- Player 4 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 4 Name</label>
+            <input id="player4Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player4Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player4Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player4Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+
+        <!-- Player 5 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 5 Name</label>
+            <input id="player5Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player5Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player5Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player5Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPTAIN DETAILS -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4 text-indigo-200">TEAM CAPTAIN / CONTACT</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Captain Name</label>
+            <input id="captainName" type="text" placeholder="Captain Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">WhatsApp Number</label>
+            <input id="captainPhone" type="tel" placeholder="e.g. 628123456789" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="block mb-1">Email</label>
+            <input id="captainEmail" type="email" placeholder="Email" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKBOXES -->
+      <div class="space-y-3">
+        <label class="inline-flex items-center">
+          <input id="terms" type="checkbox" class="h-4 w-4 text-indigo-600" required />
+          <span class="ml-2">I agree to the terms and conditions of the tournament</span>
+        </label>
+        <br/>
+        <label class="inline-flex items-center">
+          <input id="accurateData" type="checkbox" class="h-4 w-4 text-indigo-600" required />
+          <span class="ml-2">The data I entered is correct</span>
+        </label>
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <div class="text-center pt-4">
+        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-indigo-700 rounded-full font-semibold shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+          REGISTER NOW
+        </button>
+        <!-- BUTTON BACK -->
+<a href="index.html">
+  <button type="button" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-indigo-700 rounded-full font-semibold shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+    BACK
+  </button>
+</a>
+
+      </div>
+    </form>
+  </div>
+
+  <!-- WHATSAPP SCRIPT -->
+  <script>
+    function sendWhatsApp(e) {
+      e.preventDefault();
+
+      // <<<=== GANTI DENGAN NOMOR WHATSAPP PANITIA TANPA + ===>>>
+      const destNumber = "6287887073300"; // contoh: 62812XXXXXXX
+
+      // ambil nilai
+      const teamName = document.getElementById('teamName').value;
+      const teamLogoDropdown = document.getElementById('teamLogoDropdown').value;
+      const institution = document.getElementById('institution').value;
+      const region = document.getElementById('region').value;
+
+      const fullName = document.getElementById('fullName').value;
+      const nickname = document.getElementById('nickname').value;
+      const playerId = document.getElementById('playerId').value;
+      const playerRole = document.getElementById('playerRole').value;
+      const playerEmail = document.getElementById('playerEmail').value;
+
+      const player1Name = document.getElementById('player1Name').value;
+      const player1Role = document.getElementById('player1Role').value;
+      const player1Phone = document.getElementById('player1Phone').value;
+      const player1Email = document.getElementById('player1Email').value;
+
+      const player2Name = document.getElementById('player2Name').value;
+      const player2Role = document.getElementById('player2Role').value;
+      const player2Phone = document.getElementById('player2Phone').value;
+      const player2Email = document.getElementById('player2Email').value;
+
+      const player3Name = document.getElementById('player3Name').value;
+      const player3Role = document.getElementById('player3Role').value;
+      const player3Phone = document.getElementById('player3Phone').value;
+      const player3Email = document.getElementById('player3Email').value;
+
+      const player4Name = document.getElementById('player4Name').value;
+      const player4Role = document.getElementById('player4Role').value;
+      const player4Phone = document.getElementById('player4Phone').value;
+      const player4Email = document.getElementById('player4Email').value;
+
+      const player5Name = document.getElementById('player5Name').value;
+      const player5Role = document.getElementById('player5Role').value;
+      const player5Phone = document.getElementById('player5Phone').value;
+      const player5Email = document.getElementById('player5Email').value;
+
+
+      const captainName = document.getElementById('captainName').value;
+      const captainPhone = document.getElementById('captainPhone').value;
+      const captainEmail = document.getElementById('captainEmail').value;
+
+      const message = `*Registrasi Turnamen GamersPro*%0A%0A` +
+        `*TEAM INFORMATION*%0A` +
+        `Team Name: ${teamName}%0A` +
+        `Team Name: ${teamLogoDropdown}%0A` +
+        `Institution: ${institution}%0A` +
+        `Region: ${region}%0A%0A` +
+        `*PLAYER DETAILS*%0A` +
+        `Full Name: ${fullName}%0A` +
+        `Nickname: ${nickname}%0A` +
+        `Player ID: ${playerId}%0A` +
+        `Role: ${playerRole}%0A` +
+        `Email: ${playerEmail}%0A%0A` +
+        `*PLAYER 1*%0A` +
+        `Player 1 Name: ${player1Name}%0A` +
+        `Role: ${player1Role}%0A` +
+        `Phone: ${player1Phone}%0A` +
+        `Email: ${player1Email}%0A%0A` +
+        `*PLAYER 2*%0A` +
+        `Player 2 Name: ${player2Name}%0A` +
+        `Role: ${player2Role}%0A` +
+        `Phone: ${player2Phone}%0A` +
+        `Email: ${player2Email}%0A%0A` +
+        `*PLAYER 3*%0A` +
+        `Player 3 Name: ${player3Name}%0A` +
+        `Role: ${player3Role}%0A` +
+        `Phone: ${player3Phone}%0A` +
+        `Email: ${player3Email}%0A%0A` +
+        `*PLAYER 4*%0A` +
+        `Player 4 Name: ${player4Name}%0A` +
+        `Role: ${player4Role}%0A` +
+        `Phone: ${player4Phone}%0A` +
+        `Email: ${player4Email}%0A%0A` +
+        `*PLAYER 5*%0A` +
+        `Player 5 Name: ${player5Name}%0A` +
+        `Role: ${player5Role}%0A` +
+        `Phone: ${player5Phone}%0A` +
+        `Email: ${player5Email}%0A%0A` +
+        `*CAPTAIN / CONTACT*%0A` +
+        `Captain Name: ${captainName}%0A` +
+        `WhatsApp: ${captainPhone}%0A` +
+        `Email: ${captainEmail}`;
+
+      const waLink = `https://wa.me/${destNumber}?text=${message}`;
+      window.open(waLink, '_blank');
+    }
+  </script>
+
+    <script>
+  document.getElementById('game-select').addEventListener('change', function () {
+    const selected = this.value;
+
+    if (selected === 'ml') {
+      window.location.href = 'ml.html';
+    } else if (selected === 'hok') {
+      window.location.href = 'hok.html';
+    } else if (selected === 'pubg') {
+      window.location.href = 'pubg.html';
+    } else if (selected === 'ff') {
+      window.location.href = 'ff.html';
+    }
+  });
+</script>
+</body>
+</html>
