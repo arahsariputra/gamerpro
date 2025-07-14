@@ -19,8 +19,20 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-gray-900 text-white flex items-center justify-center py-10">
   <!-- background -->
-  <div class="bg-left"></div>
-  <div class="bg-right"></div>
+
+<div class="fixed-image-wrapper">
+  <div class="fixed-image fixed-image-left">
+    <img src="../image/1.png" alt="Hero Left Top">
+    <img src="../image/4.png" alt="Hero Left Bottom">
+  </div>
+  <div class="fixed-image fixed-image-right">
+    <img src="../image/3.png" alt="Hero Right Top">
+    <img src="../image/2.png" alt="Hero Right Bottom">
+  </div>
+</div>
+
+
+
     <!-- form container -->
   <div class="w-full max-w-3xl bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8 ring-1 ring-white/20">
     <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-8 text-indigo-300 tracking-wide">Form Registrasi Turnamen</h1>
@@ -51,10 +63,10 @@
   <label class="block mb-1 text-white">Pilih Event</label>
   <select id="teamLogoDropdown" class="w-full bg-gray-900/60 rounded-md px-4 py-2 text-white">
     <option value="">-- Pilih Event --</option>
-    <option value="https://photos.app.goo.gl/MtGfT7fAYnfhZqeLA">Mobile Legend</option>
-    <option value="https://drive.google.com/file/d/1aUBvapM_iauWfi4zEwToSLmpOJ8bhrgI/view?usp=sharing">FF</option>
-    <option value="https://drive.google.com/file/d/154g2qF3VWvJRHUpCZf1-XOGk9o2RnBNe/view?usp=sharing">PUBG</option>
-    <option value="https://drive.google.com/file/d/19QZLYfZf7uHBk4ls-lgvGnEdozVyXQ70/view?usp=sharing">HOK</option>
+    <option value="https://photos.app.goo.gl/4JDiXmRNSHKr9txm7">Mobile Legend</option>
+    <option value="https://photos.app.goo.gl/ozdWsyBWLc6TytBe9">FF</option>
+    <option value="https://photos.app.goo.gl/uaJp5yfTHpsM1oWe8">PUBG</option>
+    <option value="https://photos.app.goo.gl/MZMjEGLQ9QHVZA3V7">HOK</option>
   </select>
 </div>
 
@@ -295,9 +307,10 @@
       const captainEmail = document.getElementById('captainEmail').value;
 
       const message = `*Registrasi Turnamen GamersPro*%0A%0A` +
+      `*Sertakan Poster Turnamen*%0A%0A` +
         `*TEAM INFORMATION*%0A` +
         `Team Name: ${teamName}%0A` +
-        `Team Name: ${teamLogoDropdown}%0A` +
+        `Event: ${teamLogoDropdown}%0A` +
         `Institution: ${institution}%0A` +
         `Region: ${region}%0A%0A` +
         `*PLAYER DETAILS*%0A` +

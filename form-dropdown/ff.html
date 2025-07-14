@@ -19,8 +19,16 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-gray-900 text-white flex items-center justify-center py-10">
   <!-- background -->
-  <div class="bg-left"></div>
-  <div class="bg-right"></div>
+<div class="fixed-image-wrapper">
+  <div class="fixed-image fixed-image-left">
+    <img src="../image/1.png" alt="Hero Left Top">
+    <img src="../image/4.png" alt="Hero Left Bottom">
+  </div>
+  <div class="fixed-image fixed-image-right">
+    <img src="../image/3.png" alt="Hero Right Top">
+    <img src="../image/2.png" alt="Hero Right Bottom">
+  </div>
+</div>
     <!-- form container -->
   <div class="w-full max-w-3xl bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8 ring-1 ring-white/20">
     <h1 class="text-3xl md:text-4xl font-extrabold text-center mb-8 text-indigo-300 tracking-wide">Form Registrasi Turnamen</h1>
@@ -30,8 +38,8 @@
          <div class="dropdown-container">
     <label for="game-select">Pilih Game:</label><br>
     <select id="game-select">
-      <option value="ml">Free Fire</option>
-      <option value="ff">Mobile Legends</option>
+      <option value="ff">Free Fire</option>
+      <option value="ml">Mobile Legends</option>
       <option value="pubg">PUBG</option>
       <option value="hok">Honor of Kings</option>
     </select>
@@ -51,10 +59,10 @@
   <label class="block mb-1 text-white">Pilih Event</label>
   <select id="teamLogoDropdown" class="w-full bg-gray-900/60 rounded-md px-4 py-2 text-white">
     <option value="">-- Pilih Event --</option>
-    <option value="https://photos.app.goo.gl/MtGfT7fAYnfhZqeLA">Mobile Legend</option>
-    <option value="https://drive.google.com/file/d/1aUBvapM_iauWfi4zEwToSLmpOJ8bhrgI/view?usp=sharing">FF</option>
-    <option value="https://drive.google.com/file/d/154g2qF3VWvJRHUpCZf1-XOGk9o2RnBNe/view?usp=sharing">PUBG</option>
-    <option value="https://drive.google.com/file/d/19QZLYfZf7uHBk4ls-lgvGnEdozVyXQ70/view?usp=sharing">HOK</option>
+    <option value="https://photos.app.goo.gl/4JDiXmRNSHKr9txm7">Mobile Legend</option>
+    <option value="https://photos.app.goo.gl/ozdWsyBWLc6TytBe9">FF</option>
+    <option value="https://photos.app.goo.gl/uaJp5yfTHpsM1oWe8">PUBG</option>
+    <option value="https://photos.app.goo.gl/MZMjEGLQ9QHVZA3V7">HOK</option>
   </select>
 </div>
 
@@ -174,6 +182,26 @@
             <input id="player4Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
           </div>
         </div>
+
+        <!-- Player 5
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Player 5 Name</label>
+            <input id="player5Name" type="text" placeholder="Name" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Role</label>
+            <input id="player5Role" type="text" placeholder="Role" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Phone Number</label>
+            <input id="player5Phone" type="tel" placeholder="Phone Number" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input id="player5Email" type="email" placeholder="Optional" class="w-full bg-gray-900/60 rounded-md px-4 py-2" />
+          </div>
+        </div> -->
       </section>
 
       <!-- CAPTAIN DETAILS -->
@@ -264,10 +292,10 @@
       const player4Phone = document.getElementById('player4Phone').value;
       const player4Email = document.getElementById('player4Email').value;
 
-      const player5Name = document.getElementById('player5Name').value;
-      const player5Role = document.getElementById('player5Role').value;
-      const player5Phone = document.getElementById('player5Phone').value;
-      const player5Email = document.getElementById('player5Email').value;
+      // const player5Name = document.getElementById('player5Name').value;
+      // const player5Role = document.getElementById('player5Role').value;
+      // const player5Phone = document.getElementById('player5Phone').value;
+      // const player5Email = document.getElementById('player5Email').value;
 
 
       const captainName = document.getElementById('captainName').value;
@@ -275,9 +303,10 @@
       const captainEmail = document.getElementById('captainEmail').value;
 
       const message = `*Registrasi Turnamen GamersPro*%0A%0A` +
+      `*Sertakan Poster Turnamen*%0A%0A` +
         `*TEAM INFORMATION*%0A` +
         `Team Name: ${teamName}%0A` +
-        `Team Name: ${teamLogoDropdown}%0A` +
+        `Event: ${teamLogoDropdown}%0A` +
         `Institution: ${institution}%0A` +
         `Region: ${region}%0A%0A` +
         `*PLAYER DETAILS*%0A` +
@@ -306,11 +335,11 @@
         `Role: ${player4Role}%0A` +
         `Phone: ${player4Phone}%0A` +
         `Email: ${player4Email}%0A%0A` +
-        `*PLAYER 5*%0A` +
-        `Player 5 Name: ${player5Name}%0A` +
-        `Role: ${player5Role}%0A` +
-        `Phone: ${player5Phone}%0A` +
-        `Email: ${player5Email}%0A%0A` +
+        // `*PLAYER 5*%0A` +
+        // `Player 5 Name: ${player5Name}%0A` +
+        // `Role: ${player5Role}%0A` +
+        // `Phone: ${player5Phone}%0A` +
+        // `Email: ${player5Email}%0A%0A` +
         `*CAPTAIN / CONTACT*%0A` +
         `Captain Name: ${captainName}%0A` +
         `WhatsApp: ${captainPhone}%0A` +
